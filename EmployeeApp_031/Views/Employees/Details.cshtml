@@ -1,0 +1,58 @@
+﻿@model EmployeeApp_031.Models.Employee
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+<p class="employee__detail">
+    <span><i class="fas fa-database"></i></span>
+    <a asp-action="Index">Employee Data
+    </a> > Detail Data > @Html.DisplayFor(model => model.FullName)
+</p>
+
+<hr />
+
+<div class="row mb-3">
+    <div class="col-md-8">
+        <div class="card detail__card">
+            <h5 class="card-header detail__header">
+            Detail Data Employee
+            </h5>
+            <div class="card-body">
+                <dl class="row mt-2">
+                    <dt class = "col-sm-4">
+                        @Html.DisplayNameFor(model => model.FullName)
+                    </dt>
+                    <dd class = "col-sm-8">
+                        @Html.DisplayFor(model => model.FullName)
+                    </dd>
+                    <dt class = "col-sm-4">
+                        @Html.DisplayNameFor(model => model.EmpCode)
+                    </dt>
+                    <dd class = "col-sm-8">
+                        @Html.DisplayFor(model => model.EmpCode)
+                    </dd>
+                    <dt class = "col-sm-4">
+                        @Html.DisplayNameFor(model => model.Position)
+                    </dt>
+                    <dd class = "col-sm-8">
+                        @Html.DisplayFor(model => model.Position)
+                    </dd>
+                    <dt class = "col-sm-4">
+                        @Html.DisplayNameFor(model => model.OfficeLocation)
+                    </dt>
+                    <dd class = "col-sm-8">
+                        @Html.DisplayFor(model => model.OfficeLocation)
+                    </dd>
+                </dl>
+            </div>
+            <div class="card-footer">
+               <div>
+                    <a class="btn btn-outline-primary" asp-action="Edit" asp-route-id="@Model.EmployeeId">Edit</a>
+                    <a class="btn btn-outline-success" asp-action="Index">Back to List</a>
+               </div>
+            </div>
+       </div>
+    </div>
+</div>
